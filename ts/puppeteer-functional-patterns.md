@@ -10,7 +10,7 @@ Below is a function that accepts a Puppeteer [Browser](https://pptr.dev/#?produc
 
 ```typescript
 const async scrapePage = (browser: Browser, url: string) => {
-  const page = browser.newPage()
+  const page = browser.newPage();
   const tags = await page.evaluate(() => {
     return Array.from(document.querySelectorAll('.tags'))
       .map(el => el.innerHTML)
@@ -33,7 +33,7 @@ const scrapeTags = (page: Page) => {
 });
 
 const scrapePage = async (browser: Browser, url: string) => {
-  const page = browser.newPage()
+  const page = browser.newPage();
   const tags = await scrapeTags(page);
   const title = await scrapeTitle(page);
   const author = await scrapeAuthor(page);
@@ -53,7 +53,7 @@ const scrapeTags = (page: Page) => page.evaluate(() => {
 });
 
 const scrapePage = async (browser: Browser, url: string) => {
-  const page = browser.newPage()
+  const page = browser.newPage();
   const tags = await scrapeTags(page);
   const title = await scrapeTitle(page);
   const author = await scrapeAuthor(page);
@@ -93,7 +93,7 @@ At this point we have a `scrapePage` function:
 
 ```typescript
 const scrapePage = async (browser: Browser, url: string) => {
-  const page = browser.newPage()
+  const page = browser.newPage();
   const tags = await scrapeTags(page);
   const title = await scrapeTitle(page);
   const author = await scrapeAuthor(page);
